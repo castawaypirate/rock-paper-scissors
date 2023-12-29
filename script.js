@@ -1,3 +1,14 @@
+const buttons = document.querySelectorAll('.button');
+
+// Add the same event listener to each button
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        let playerSelection = getPlayerSelection(this);
+        let computerSelection = getComputerSelection();
+        playRound(playerSelection, computerSelection);
+    });
+});
+
 //Returns a random integer in a range
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -6,7 +17,7 @@ function getRandomInt(min, max) {
 }
 
 
-//Randomly chooses computer's play
+//Randomly chooses computer's selection
 function getComputerSelection() {
     let choice = getRandomInt(0,2);
     if(choice===0){
@@ -20,9 +31,9 @@ function getComputerSelection() {
     }
 }
 
-// Gets player's selection from a promt popup
-function getPlayerSelection() {
-    let choice = prompt("Type your choice:");
+// Gets player's selection when a button is pressed
+function getPlayerSelection(context) {
+    let choice = context.textContent;
     return choice.toUpperCase();
 }
 
@@ -71,25 +82,3 @@ function playRound(playerSelection, computerSelection) {
         }
     } 
 }
-
-// Game function
-function game() {
-    let count = 0;
-    for(let i=0;i<5;i++){
-        let playerSelection = getPlayerSelection();
-        let computerSelection = getComputerSelection();
-        console.log("Your selection: " + playerSelection + "\nComputer's selection: " + computerSelection)
-        count += playRound(playerSelection, computerSelection);
-    }
-    if(count<0){
-        console.log("You lost the game!")
-    }
-    else if(count===0){
-        console.log("The game was a tie!")
-    }
-    else{
-        console.log("You won the game!")
-    }
-}
-
-game();
