@@ -82,3 +82,7 @@ function playRound(playerSelection, computerSelection) {
         }
     } 
 }
+
+var currentYear = new Date().getFullYear();
+
+document.querySelector(".footer").innerHTML += currentYear;
