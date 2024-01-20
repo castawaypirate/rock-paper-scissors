@@ -9,7 +9,7 @@ buttons.forEach(button => {
     });
 });
 
-//Returns a random integer in a range
+// Returns a random integer in a range
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -17,7 +17,7 @@ function getRandomInt(min, max) {
 }
 
 
-//Randomly chooses computer's selection
+// Randomly chooses computer's selection
 function getComputerSelection() {
     let choice = getRandomInt(0,2);
     if(choice===0){
@@ -41,43 +41,43 @@ function getPlayerSelection(context) {
 function playRound(playerSelection, computerSelection) {
     if(playerSelection==="ROCK"){
         if(computerSelection==="ROCK"){
-            console.log("Rock and Rock it's a tie!")
+            alert("Rock and Rock it's a tie!")
             return 0;
         }
         else if(computerSelection==="PAPER"){
-            console.log("Paper beats Rock. You lose!")
+            alert("Paper beats Rock. You lose!")
             return -1;
         }
         else{
-            console.log("Rock beats Scissors. You win!")
+            alert("Rock beats Scissors. You win!")
             return 1;
         }
     }
     else if(playerSelection==="PAPER"){
         if(computerSelection==='ROCK'){
-            console.log("Paper beats Rock. You win!")
+            alert("Paper beats Rock. You win!")
             return 1;
         }
         else if(computerSelection==="PAPER"){
-            console.log("Paper and paper it's a tie!")
+            alert("Paper and paper it's a tie!")
             return 0;
         }
         else{
-            console.log("Scissors beats Paper. You lose!")
+            alert("Scissors beats Paper. You lose!")
             return -1;
         }
     }
     else{
         if(computerSelection==="ROCK"){
-            console.log("Rock beats Scissors. You lost!")
+            alert("Rock beats Scissors. You lost!")
             return -1;
         }
         else if(computerSelection==="PAPER"){
-            console.log("Scissors beats paper. You win!")
+            alert("Scissors beats paper. You win!")
             return 1;
         }
         else{
-            console.log("Scissors and Scissors it's a tie!")
+            alert("Scissors and Scissors it's a tie!")
             return 0;
         }
     } 
